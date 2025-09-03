@@ -65,11 +65,11 @@ svg.menu > g > path {
 }
 
 svg.menu > g.sector:hover > path {
-    fill: rgba(255, 0, 0, 0.2);
-    stroke: rgba(255, 0, 0, 0.9);
+    fill: rgba(0, 123, 255, 0.15);
+    stroke: rgba(0, 123, 255, 0.7);
     stroke-width: 2.5;
-    filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.7));
-    animation: pulseGlowRed 1.2s infinite;
+    filter: drop-shadow(0 0 8px rgba(0, 123, 255, 0.6));
+    animation: pulseGlow 1.5s infinite;
     transition: 0.3s ease;
 }
 
@@ -85,8 +85,8 @@ svg.menu > g.sector > use {
 }
 
 svg.menu > g.center:hover > circle {
-    fill: #ff1a1a;
-    animation: pulseGlowRed 1.2s infinite;
+    fill: #007bff;
+    animation: pulseGlow 1.5s infinite;
 }
 
 svg.menu > g.center > circle {
@@ -102,14 +102,14 @@ svg.menu > g.center > use {
     fill: white;
 }
 
-@keyframes pulseGlowRed {
+@keyframes pulseGlow {
     0% {
-        filter: drop-shadow(0 0 6px rgba(255, 0, 0, 0.7));
+        filter: drop-shadow(0 0 4px rgba(0, 123, 255, 0.6));
     }
     50% {
-        filter: drop-shadow(0 0 18px rgba(255, 0, 0, 1));
+        filter: drop-shadow(0 0 12px rgba(0, 123, 255, 0.9));
     }
     100% {
-        filter: drop-shadow(0 0 6px rgba(255, 0, 0, 0.7));
+        filter: drop-shadow(0 0 4px rgba(0, 123, 255, 0.6));
     }
 }
