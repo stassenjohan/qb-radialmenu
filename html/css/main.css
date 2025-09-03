@@ -1,64 +1,16 @@
-/* Import Exo 2 font as defined in style guide */
-@import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700&display=swap");
-
-:root {
-    /* Colors */
-    --md-primary: #f44336;
-    --md-on-primary: #ffffff;
-    --md-primary-container: #ffdad6;
-    --md-on-primary-container: #410002;
-    --md-secondary: #d32f2f;
-    --md-on-secondary: #ffffff;
-    --md-surface: #fffbff;
-    --md-on-surface: #1c1b1f;
-    --md-surface-container: #f3edf7;
-    --md-surface-container-high: #ece8f0;
-
-    /* Typography from style guide */
-    --md-typescale-display-large-size: 57px;
-    --md-typescale-display-medium-size: 45px;
-    --md-typescale-display-small-size: 36px;
-    --md-typescale-headline-large-size: 32px;
-    --md-typescale-headline-medium-size: 28px;
-    --md-typescale-headline-small-size: 24px;
-    --md-typescale-title-large-size: 22px;
-    --md-typescale-title-medium-size: 16px;
-    --md-typescale-title-small-size: 14px;
-    --md-typescale-body-large-size: 16px;
-    --md-typescale-body-medium-size: 14px;
-    --md-typescale-body-small-size: 12px;
-    --md-typescale-label-large-size: 14px;
-    --md-typescale-label-medium-size: 12px;
-    --md-typescale-label-small-size: 11px;
-
-    /* Custom SVG menu font sizes */
-    --menu-sector-font-size: 2.8px;
-    --menu-center-font-size: 2.5px;
-
-    /* Font properties */
-    --font-primary: "Exo 2", sans-serif;
-    --font-weight-regular: 400;
-    --font-weight-medium: 500;
-    --font-weight-bold: 700;
-
-    /* Spacing */
-    --md-spacing-small: 8px;
-    --md-elevation-1: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
-}
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
 
 h1 {
-    font-weight: var(--font-weight-regular);
-    font-size: var(--md-typescale-headline-large-size);
-    color: var(--md-on-primary);
+    font-weight: normal;
+    color: white;
 }
 
 div.info {
-    margin: var(--md-spacing-small) 0;
+    margin: 12px 0;
 }
 
 div.info * {
-    font-size: var(--md-typescale-body-medium-size);
-    color: var(--md-on-primary);
+    color: white;
 }
 
 #icons {
@@ -68,13 +20,11 @@ div.info * {
 
 .container {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    left: 1000px;
 }
 
 #vehicle {
-    fill: var(--md-on-primary);
+    fill: white;
 }
 
 div.menuHolder {
@@ -112,30 +62,31 @@ svg.menu.outer {
 
 svg.menu > g > path {
     fill: rgb(23 23 23 / 80%);
-    box-shadow: var(--md-elevation-1);
 }
 
-svg.menu > g.sector > path {
-    cursor: pointer;
+svg.menu > g.sector:hover > path {
+    fill: rgba(255, 0, 0, 0.2);
+    stroke: rgba(255, 0, 0, 0.9);
+    stroke-width: 2.5;
+    filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.7));
+    animation: pulseGlowRed 1.2s infinite;
+    transition: 0.3s ease;
 }
 
 svg.menu > g.sector > text,
 svg.menu > g.sector > use {
-    font-family: var(--font-primary);
+    font-family: "Poppins", sans-serif;
     margin-top: 5px;
-    font-size: var(--menu-sector-font-size);
+    font-size: 2.8px;
     letter-spacing: 0.2px;
     text-transform: uppercase;
     cursor: pointer;
-    fill: var(--md-on-primary);
-}
-
-svg.menu > g.sector:hover > path {
-    fill: var(--md-primary);
+    fill: white;
 }
 
 svg.menu > g.center:hover > circle {
-    fill: var(--md-primary);
+    fill: #ff1a1a;
+    animation: pulseGlowRed 1.2s infinite;
 }
 
 svg.menu > g.center > circle {
@@ -146,7 +97,19 @@ svg.menu > g.center > circle {
 svg.menu > g.center > text,
 svg.menu > g.center > use {
     margin-top: 5px;
-    font-size: var(--menu-center-font-size);
+    font-size: 2.5px;
     cursor: pointer;
-    fill: var(--md-on-primary);
+    fill: white;
+}
+
+@keyframes pulseGlowRed {
+    0% {
+        filter: drop-shadow(0 0 6px rgba(255, 0, 0, 0.7));
+    }
+    50% {
+        filter: drop-shadow(0 0 18px rgba(255, 0, 0, 1));
+    }
+    100% {
+        filter: drop-shadow(0 0 6px rgba(255, 0, 0, 0.7));
+    }
 }
