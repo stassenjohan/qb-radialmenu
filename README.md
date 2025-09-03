@@ -1,3 +1,6 @@
+Just a css edit of the radial menu
+all credit still goes to the original creators of the scripts :)
+
 # qb-radialmenu
 Radial Menu Used With QB-Core :arrows_counterclockwise:
 
